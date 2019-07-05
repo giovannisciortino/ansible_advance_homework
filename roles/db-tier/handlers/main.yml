@@ -1,2 +1,5 @@
 ---
-# handlers file for db-tier
+- name: restart postgres
+  service:
+    name: postgresql.service
+    state: restarted
