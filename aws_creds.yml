@@ -21,7 +21,7 @@
 
   - command: "cat /root/.ssh/{{file_to_copy.stdout}}" 
     register: test
-  - debug: var=test
+  - debug: msg="{{lookup('file', '/root/.ssh/' + file_to_copy.stdout )}}"
   - name: Tower Creds key file
     tower_credential:
       name: Creds for AWS instances
